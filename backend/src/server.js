@@ -7,8 +7,8 @@ const startServer = async () => {
     await testDatabaseConnection();
     console.log('Database connection successful.');
 
-    app.listen(env.PORT, () => {
-      console.log(`HandyNaija API listening on http://localhost:${env.PORT}`);
+    app.listen(env.PORT, '0.0.0.0', () => {
+      console.log(`HandyNaija API listening on port ${env.PORT}`);
     });
   } catch (error) {
     console.error('Failed to start server:', error);

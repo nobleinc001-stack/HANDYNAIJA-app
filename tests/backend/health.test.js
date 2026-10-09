@@ -35,3 +35,27 @@ test('versioned API health endpoint is mounted', async () => {
   assert.equal(payload.success, true);
   assert.equal(payload.data.status, 'ok');
 });
+
+test('CORS allows Vercel deployment and preview origins', async () => {
+  const response = await fetch(`${baseUrl}/health`, {
+    method: 'OPTIONS',
+    headers: {
+      Origin: 'https://handynaija-git-preview-team.vercel.app',
+      'Access-Control-Request-Method': 'GET',
+    },
+  });
+
+  assert.equal(response.headers.get('access-control-allow-origin'), 'https://handynaija-git-preview-team.vercel.app');
+});
+
+test('CORS does not allow unrelated origins', async () => {
+  const response = await fetch(`${baseUrl}/health`, {
+    method: 'OPTIONS',
+    headers: {
+      Origin: 'https://untrusted.example.com',
+      'Access-Control-Request-Method': 'GET',
+    },
+  });
+
+  assert.equal(response.headers.has('access-control-allow-origin'), false);
+});
