@@ -1,0 +1,19 @@
+{
+  "name": "handynaija",
+  "version": "1.0.0",
+  "private": true,
+  "description": "HandyNaija frontend — semantic HTML, CSS and native ES modules. No build step.",
+  "type": "module",
+  "scripts": {
+    "start": "node serve.mjs",
+    "serve": "node serve.mjs",
+    "api:dev": "npm --prefix backend run dev",
+    "api:start": "npm --prefix backend start",
+    "db:generate": "npm --prefix backend run db:generate",
+    "db:push": "npm --prefix backend run db:push",
+    "db:studio": "npm --prefix backend run db:studio"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

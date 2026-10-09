@@ -1,0 +1,286 @@
+/* ==========================================================================
+   HANDYNAIJA — Design Tokens
+   Single source of truth for colour, type, spacing, radius, shadow and motion.
+   Imported by every other stylesheet. Change a value here and the whole
+   component library follows.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Brand palette
+   Restrained primary + neutral surfaces + one accent for CTAs and status.
+   -------------------------------------------------------------------------- */
+:root {
+  --brand-900: #052e24;
+  --brand-800: #07402f;
+  --brand-700: #0a5340;
+  --brand-600: #0b6e4f;
+  --brand-500: #0e8a63;
+  --brand-400: #2fa87d;
+  --brand-300: #74c7a6;
+  --brand-200: #b3e2d0;
+  --brand-100: #dcf1e8;
+  --brand-050: #f1faf6;
+
+  --accent-700: #a35c04;
+  --accent-600: #c2710a;
+  --accent-500: #f59e0b;
+  --accent-400: #fbbf24;
+  --accent-300: #fcd34d;
+  --accent-100: #fef3c7;
+  --accent-050: #fffbeb;
+}
+
+/* --------------------------------------------------------------------------
+   2. Neutral palette (slate)
+   -------------------------------------------------------------------------- */
+:root {
+  --slate-950: #0b1220;
+  --slate-900: #0f172a;
+  --slate-800: #1e293b;
+  --slate-700: #334155;
+  --slate-600: #475569;
+  --slate-500: #64748b;
+  --slate-400: #94a3b8;
+  --slate-300: #cbd5e1;
+  --slate-200: #e2e8f0;
+  --slate-100: #f1f5f9;
+  --slate-050: #f8fafc;
+  --white: #ffffff;
+
+  /* Semantic text */
+  --text-strong: var(--slate-900);
+  --text-body: var(--slate-700);
+  --text-muted: var(--slate-500);
+  --text-subtle: var(--slate-400);
+  --text-inverse: var(--white);
+  --text-link: var(--brand-600);
+}
+
+/* --------------------------------------------------------------------------
+   3. Status palette
+   Paired with a text label everywhere so status is never colour-only.
+   -------------------------------------------------------------------------- */
+:root {
+  --status-pending-bg: var(--accent-100);
+  --status-pending-fg: var(--accent-700);
+  --status-pending-dot: var(--accent-500);
+
+  --status-accepted-bg: #dbeafe;
+  --status-accepted-fg: #1d4ed8;
+  --status-accepted-dot: #3b82f6;
+
+  --status-scheduled-bg: #ede9fe;
+  --status-scheduled-fg: #6d28d9;
+  --status-scheduled-dot: #8b5cf6;
+
+  --status-in-progress-bg: #cffafe;
+  --status-in-progress-fg: #0e7490;
+  --status-in-progress-dot: #06b6d4;
+
+  --status-completed-bg: var(--brand-100);
+  --status-completed-fg: var(--brand-700);
+  --status-completed-dot: var(--brand-500);
+
+  --status-rejected-bg: #fee2e2;
+  --status-rejected-fg: #b91c1c;
+  --status-rejected-dot: #ef4444;
+
+  --status-cancelled-bg: var(--slate-100);
+  --status-cancelled-fg: var(--slate-600);
+  --status-cancelled-dot: var(--slate-400);
+
+  --status-info-bg: #e0f2fe;
+  --status-info-fg: #075985;
+  --status-info-dot: #0ea5e9;
+}
+
+/* --------------------------------------------------------------------------
+   4. Feedback palette
+   -------------------------------------------------------------------------- */
+:root {
+  --success-bg: #dcfce7;
+  --success-fg: #15803d;
+  --success-border: #86efac;
+
+  --warning-bg: #fef3c7;
+  --warning-fg: #a16207;
+  --warning-border: #fcd34d;
+
+  --danger-bg: #fee2e2;
+  --danger-fg: #b91c1c;
+  --danger-border: #fca5a5;
+
+  --info-bg: #e0f2fe;
+  --info-fg: #075985;
+  --info-border: #7dd3fc;
+}
+
+/* --------------------------------------------------------------------------
+   5. Typography
+   System font stack keeps first paint fast and avoids webfont downloads.
+   -------------------------------------------------------------------------- */
+:root {
+  --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue',
+    Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
+  --font-mono: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace;
+
+  --fs-h1: clamp(1.75rem, 1.15rem + 2.4vw, 2.5rem);
+  --fs-h2: clamp(1.5rem, 1.2rem + 1.2vw, 1.875rem);
+  --fs-h3: clamp(1.125rem, 1.02rem + 0.45vw, 1.375rem);
+  --fs-h4: 1.0625rem;
+  --fs-body: clamp(0.9375rem, 0.91rem + 0.14vw, 1.0625rem);
+  --fs-small: 0.875rem;
+  --fs-xs: 0.8125rem;
+  --fs-label: 0.875rem;
+  --fs-button: 0.9375rem;
+
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+
+  --lh-tight: 1.2;
+  --lh-snug: 1.35;
+  --lh-body: 1.6;
+  --lh-loose: 1.75;
+
+  --tracking-wide: 0.06em;
+  --tracking-tight: -0.01em;
+}
+
+/* --------------------------------------------------------------------------
+   6. Spacing scale (4px base)
+   -------------------------------------------------------------------------- */
+:root {
+  --space-0: 0;
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+}
+
+/* --------------------------------------------------------------------------
+   7. Radii
+   -------------------------------------------------------------------------- */
+:root {
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 20px;
+  --radius-pill: 999px;
+  --radius-circle: 50%;
+}
+
+/* --------------------------------------------------------------------------
+   8. Elevation
+   -------------------------------------------------------------------------- */
+:root {
+  --shadow-xs: 0 1px 2px rgba(15, 23, 42, 0.06);
+  --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.08), 0 1px 2px rgba(15, 23, 42, 0.04);
+  --shadow-md: 0 4px 12px rgba(15, 23, 42, 0.08), 0 2px 4px rgba(15, 23, 42, 0.04);
+  --shadow-lg: 0 12px 28px rgba(15, 23, 42, 0.1), 0 4px 10px rgba(15, 23, 42, 0.04);
+  --shadow-xl: 0 24px 48px rgba(15, 23, 42, 0.14);
+  --shadow-focus: 0 0 0 3px rgba(14, 138, 99, 0.35);
+}
+
+/* --------------------------------------------------------------------------
+   9. Borders
+   -------------------------------------------------------------------------- */
+:root {
+  --border-width: 1px;
+  --border-color: var(--slate-200);
+  --border-color-strong: var(--slate-300);
+  --border-color-focus: var(--brand-500);
+}
+
+/* --------------------------------------------------------------------------
+   10. Layout tokens
+   -------------------------------------------------------------------------- */
+:root {
+  --container-width: 1200px;
+  --container-narrow: 760px;
+  --container-wide: 1440px;
+  --container-pad: var(--space-4);
+
+  --header-height: 64px;
+  --header-height-scrolled: 56px;
+  --z-header: 100;
+  --z-dropdown: 200;
+  --z-drawer: 300;
+  --z-modal: 400;
+  --z-toast: 500;
+}
+
+/* --------------------------------------------------------------------------
+   11. Motion
+   -------------------------------------------------------------------------- */
+:root {
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --duration-fast: 120ms;
+  --duration-base: 200ms;
+  --duration-slow: 320ms;
+}
+
+/* --------------------------------------------------------------------------
+   12. Component tokens
+   -------------------------------------------------------------------------- */
+:root {
+  --control-height: 44px;
+  --control-height-sm: 36px;
+  --control-height-lg: 52px;
+  --control-radius: var(--radius-md);
+
+  --transition-control: border-color var(--duration-fast) var(--ease-out),
+    box-shadow var(--duration-fast) var(--ease-out), background-color var(--duration-fast) var(--ease-out);
+
+  --skeleton-base: var(--slate-200);
+  --skeleton-sheen: var(--slate-100);
+}
+
+/* --------------------------------------------------------------------------
+   13. Aliases
+   Shorter names used by inline component styles and utility classes, mapped
+   onto the tokens above so there is still a single source of truth.
+   -------------------------------------------------------------------------- */
+:root {
+  /* Two-digit brand tint matches the --slate-050 convention used elsewhere. */
+  --brand-50: var(--brand-050);
+  --accent-50: var(--accent-050);
+
+  /* Extra spacing steps for dense component layouts. */
+  --space-7: 1.75rem;
+  --space-9: 2.25rem;
+
+  /* Font sizes. */
+  --text-base: var(--fs-body);
+  --text-sm: var(--fs-small);
+  --text-xs: var(--fs-xs);
+  --text-lg: var(--fs-h4);
+
+  /* Surfaces and borders. */
+  --surface: var(--white);
+  --surface-alt: var(--slate-050);
+  --surface-muted: var(--slate-100);
+  --border-subtle: var(--slate-100);
+  --border-strong: var(--border-color-strong);
+
+  /* Feedback shades. */
+  --success-100: var(--success-bg);
+  --success-500: var(--success-border);
+  --danger-100: var(--danger-bg);
+  --danger-500: var(--danger-border);
+  --danger-600: var(--danger-fg);
+
+  /* Motion. */
+  --transition-fast: var(--duration-fast);
+}

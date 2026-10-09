@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" data-api-mock="true">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sign in — HandyNaija</title>
+  <meta name="description" content="Sign in to HandyNaija to request services, manage requests and message providers.">
+  <meta name="theme-color" content="#0b6e4f">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body class="auth-body" data-page="login" data-header="public">
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <main id="main" class="auth">
+    <div class="auth__panel">
+      <div class="auth__brand">
+        <a class="brand" href="index.html">
+          <span class="brand__mark" data-brand-mark aria-hidden="true"></span>
+          <span class="brand__name">Handy<strong>Naija</strong></span>
+        </a>
+        <h1 class="h2">Welcome back</h1>
+        <p class="text-small text-muted">Sign in to track requests, message providers and manage your account.</p>
+      </div>
+
+      <!-- Login form is built by auth.js -->
+      <div data-login-root></div>
+
+      <p class="text-center text-small text-muted" style="margin-top: var(--space-5)">
+        New to HandyNaija?
+        <a class="link" href="register.html">Create an account</a>
+      </p>
+    </div>
+
+    <aside class="auth__aside" aria-label="Why HandyNaija">
+      <div class="auth__aside-inner">
+        <p class="eyebrow">Demo build</p>
+        <h2 class="h3">Try it without signing up</h2>
+        <p class="text-small text-muted">
+          This frontend runs on demo data. Use any of the roles below to explore each experience —
+          the password can be anything.
+        </p>
+        <div data-demo-logins></div>
+      </div>
+    </aside>
+  </main>
+
+  <script src="js/boot-guard.js"></script>
+
+  <script type="module" src="js/pages/login.js"></script>
+</body>
+</html>

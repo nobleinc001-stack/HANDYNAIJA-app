@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" data-api-mock="true">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Request sent — HandyNaija</title>
+  <meta name="description" content="Your service request has been sent to the provider.">
+  <meta name="theme-color" content="#0b6e4f">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body data-page="request-confirmation" data-header="customer" data-auth="customer">
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <div data-site-header></div>
+
+  <main id="main" class="page-main">
+    <div class="container container--narrow" data-confirmation-root>
+      <div class="confirmation">
+        <div class="confirmation__icon"><span data-check-icon></span></div>
+        <h1 class="h1">Request sent</h1>
+        <p class="text-lead">We have passed your request to the provider. You will be notified as soon as they respond.</p>
+      </div>
+    </div>
+  </main>
+
+  <div data-site-footer></div>
+
+  <script src="js/boot-guard.js"></script>
+
+  <script type="module" src="js/pages/request-confirmation.js"></script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" data-api-mock="true">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Create an account — HandyNaija</title>
+  <meta name="description" content="Create a HandyNaija account as a customer or as a service provider.">
+  <meta name="theme-color" content="#0b6e4f">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body class="auth-body" data-page="register" data-header="public">
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <main id="main" class="auth">
+    <div class="auth__panel">
+      <div class="auth__brand">
+        <a class="brand" href="index.html">
+          <span class="brand__mark" data-brand-mark aria-hidden="true"></span>
+          <span class="brand__name">Handy<strong>Naija</strong></span>
+        </a>
+        <h1 class="h2">Create your account</h1>
+        <p class="text-small text-muted">Join as a customer to hire professionals, or as a provider to receive requests.</p>
+      </div>
+
+      <!-- Registration form is built by auth.js -->
+      <div data-register-root></div>
+
+      <p class="text-center text-small text-muted" style="margin-top: var(--space-5)">
+        Already registered?
+        <a class="link" href="login.html">Sign in</a>
+      </p>
+    </div>
+
+    <aside class="auth__aside" aria-label="Account benefits">
+      <div class="auth__aside-inner">
+        <h2 class="h3">What you get</h2>
+        <ul class="check-list">
+          <li class="check-list__item">Verified providers with real reviews</li>
+          <li class="check-list__item">Track every request from sent to completed</li>
+          <li class="check-list__item">In-app messaging with your provider</li>
+          <li class="check-list__item">Pay only after the job is done</li>
+        </ul>
+        <p class="text-xs text-muted">
+          By creating an account you agree to the Terms of Use and Privacy Policy.
+        </p>
+      </div>
+    </aside>
+  </main>
+
+  <script src="js/boot-guard.js"></script>
+
+  <script type="module" src="js/pages/register.js"></script>
+</body>
+</html>

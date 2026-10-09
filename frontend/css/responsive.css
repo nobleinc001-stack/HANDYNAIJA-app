@@ -1,0 +1,423 @@
+/* ==========================================================================
+   HANDYNAIJA — Responsive
+   Progressive collapsing from the desktop layouts defined in layout.css.
+   Breakpoints: xs 480 | sm 640 | md 768 | lg 900 | xl 1200
+   Depends on: variables.css, style.css, layout.css, components.css
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. <= 1200px — tighten desktop gutters and sidebars
+   -------------------------------------------------------------------------- */
+@media (max-width: 1200px) {
+  :root {
+    --container-pad: var(--space-5);
+  }
+
+  .app-shell {
+    grid-template-columns: 220px minmax(0, 1fr);
+  }
+
+  .split--reverse {
+    grid-template-columns: minmax(0, 1fr) 280px;
+  }
+
+  .site-footer__grid {
+    grid-template-columns: minmax(0, 1.2fr) repeat(3, minmax(0, 1fr));
+    gap: var(--space-6);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   2. <= 1024px — collapse the two-column hero and search split
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .hero__inner {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .hero__panel {
+    order: -1;
+  }
+
+  .split--sidebar,
+  .split--reverse {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  /* Filter rail becomes a horizontal scroller instead of a sticky column */
+  .filter-rail {
+    position: static;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr));
+    align-items: start;
+  }
+
+  .auth-aside {
+    padding: var(--space-8);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   3. <= 900px — main navigation collapses into a drawer
+   -------------------------------------------------------------------------- */
+@media (max-width: 900px) {
+  .nav-toggle {
+    display: inline-grid;
+  }
+
+  .site-nav,
+  .site-header__actions .btn--secondary,
+  .site-header__actions .btn--ghost {
+    display: none;
+  }
+
+  .site-header__actions {
+    margin-inline-start: auto;
+  }
+
+  /* Sidebar shell becomes a top-of-page scrollable nav */
+  .app-shell {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .app-sidebar {
+    position: static;
+    height: auto;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-3) var(--container-pad);
+    border-inline-end: 0;
+    border-bottom: var(--border-width) solid var(--border-color);
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: thin;
+  }
+
+  .app-sidebar__group {
+    display: flex;
+    gap: var(--space-1);
+  }
+
+  .app-sidebar__label,
+  .app-sidebar__foot {
+    display: none;
+  }
+
+  .app-sidebar__link {
+    white-space: nowrap;
+  }
+
+  .app-body {
+    padding: var(--space-5) var(--container-pad);
+  }
+
+  .chat {
+    grid-template-columns: minmax(0, 1fr);
+    height: auto;
+  }
+
+  .chat__list {
+    border-inline-end: 0;
+    border-bottom: var(--border-width) solid var(--border-color);
+    max-height: 240px;
+  }
+
+  .chat__messages {
+    min-height: 320px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   4. <= 768px — tablet. Sticky mobile CTA appears, auth aside hides.
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  .sticky-cta {
+    display: flex;
+  }
+
+  /* Keep the sticky CTA from covering the last row of content */
+  .has-sticky-cta .page-main {
+    padding-bottom: calc(var(--space-20) + env(safe-area-inset-bottom));
+  }
+
+  .split--auth {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .auth-aside {
+    display: none;
+  }
+
+  .auth-main {
+    padding: var(--space-6) var(--container-pad) var(--space-12);
+  }
+
+  .auth-card {
+    padding: var(--space-6);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .profile-hero__actions {
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .profile-hero__actions .btn {
+    flex: 1 1 auto;
+  }
+
+  .site-footer__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .toast-region {
+    inset-inline: var(--space-4);
+    inset-block-end: var(--space-4);
+    width: auto;
+  }
+
+  /* Timeline switches to its vertical form — horizontal runs out of room */
+  .timeline:not(.timeline--vertical) {
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+
+  .timeline:not(.timeline--vertical) .timeline__step {
+    flex-direction: row;
+    align-items: flex-start;
+    text-align: start;
+    gap: var(--space-3);
+  }
+
+  .timeline:not(.timeline--vertical) .timeline__step::before {
+    top: 24px;
+    inset-inline-start: 11px;
+    width: 2px;
+    height: calc(100% - 2px);
+  }
+
+  .timeline:not(.timeline--vertical) .timeline__label {
+    font-size: var(--fs-small);
+    padding-top: 2px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   5. <= 640px — large phone. Single-column forms and tighter padding.
+   -------------------------------------------------------------------------- */
+@media (max-width: 640px) {
+  :root {
+    --container-pad: var(--space-4);
+    --header-height: 60px;
+  }
+
+  .form-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .split--half {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .page-head,
+  .section-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .page-head__actions,
+  .section-header .btn-group {
+    width: 100%;
+  }
+
+  .page-head__actions .btn,
+  .section-header .btn-group .btn {
+    flex: 1 1 auto;
+  }
+
+  .hero {
+    padding-block: var(--space-12) var(--space-10);
+  }
+
+  .hero__stats {
+    gap: var(--space-6);
+  }
+
+  /* Buttons go full width on primary task flows */
+  .btn-group--stack {
+    flex-direction: column;
+  }
+
+  .btn-group--stack .btn {
+    width: 100%;
+  }
+
+  .modal {
+    align-items: flex-end;
+    padding: 0;
+  }
+
+  .modal__dialog {
+    max-width: 100%;
+    max-height: 92dvh;
+    border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+    padding: var(--space-5) var(--space-4);
+  }
+
+  .modal__footer .btn {
+    flex: 1 1 auto;
+  }
+
+  .detail-row {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-1);
+  }
+
+  .stat-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-3);
+  }
+
+  .stat {
+    padding: var(--space-4);
+  }
+
+  .site-footer__grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .site-footer__bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  /* Composer stacks above the list button on small screens */
+  .chat__composer {
+    flex-wrap: wrap;
+  }
+
+  .chat__composer .control {
+    flex: 1 1 100%;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   6. <= 480px — small phone
+   -------------------------------------------------------------------------- */
+@media (max-width: 480px) {
+  .brand__name {
+    font-size: 1.0625rem;
+  }
+
+  .stat-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .counter-tabs {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .counter-tab {
+    justify-content: space-between;
+  }
+
+  .provider-card {
+    grid-template-columns: minmax(0, 1fr);
+    padding: var(--space-4);
+  }
+
+  .provider-card__actions .btn {
+    flex: 1 1 100%;
+  }
+
+  .choice {
+    padding: var(--space-3);
+  }
+
+  .filter-rail {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .table--stackable {
+    min-width: 0;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   7. Landscape phones — vertical space is the constraint, not width
+   -------------------------------------------------------------------------- */
+@media (max-height: 520px) and (orientation: landscape) {
+  .hero {
+    padding-block: var(--space-10);
+  }
+
+  .chat {
+    height: calc(100dvh - var(--space-20));
+  }
+}
+
+/* --------------------------------------------------------------------------
+   8. Coarse pointers get larger hit targets
+   -------------------------------------------------------------------------- */
+@media (pointer: coarse) {
+  :root {
+    --control-height: 48px;
+  }
+
+  .icon-btn {
+    width: 44px;
+    height: 44px;
+  }
+
+  .site-nav__link,
+  .app-sidebar__link {
+    padding-block: var(--space-3);
+  }
+
+  .timeline__dot {
+    width: 26px;
+    height: 26px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   9. Wide screens — cap the dashboard content width for readability
+   -------------------------------------------------------------------------- */
+@media (min-width: 1600px) {
+  .app-body {
+    max-width: 1440px;
+    width: 100%;
+    margin-inline: auto;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   10. Forced colours (Windows High Contrast)
+   -------------------------------------------------------------------------- */
+@media (forced-colors: active) {
+  .badge,
+  .chip,
+  .btn,
+  .card,
+  .stat,
+  .control {
+    border: 1px solid CanvasText;
+  }
+
+  .badge__dot,
+  .timeline__dot {
+    forced-color-adjust: none;
+  }
+
+  .skeleton {
+    background: Canvas;
+    border: 1px solid GrayText;
+  }
+
+  .skeleton::after {
+    display: none;
+  }
+}

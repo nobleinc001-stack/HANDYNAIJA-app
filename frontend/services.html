@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en" data-api-mock="true">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Find a service provider — HandyNaija</title>
+  <meta name="description" content="Search and filter verified local service providers by service, location, rating and availability.">
+  <meta name="theme-color" content="#0b6e4f">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body data-page="services" data-header="auto">
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <div data-site-header></div>
+
+  <main id="main" class="page-main">
+    <div class="container">
+
+      <div class="page-head">
+        <div class="page-head__text">
+          <p class="eyebrow">Providers</p>
+          <h1 class="h1">Find a service</h1>
+          <p class="text-small text-muted">Compare verified professionals near you, then send a request in a couple of minutes.</p>
+        </div>
+        <div class="page-head__actions">
+          <a class="btn btn--ghost" href="index.html">Back to home</a>
+        </div>
+      </div>
+
+      <!-- ==========================================================
+           Search bar
+           ========================================================== -->
+      <form class="form" id="search-form" role="search" aria-label="Search providers" style="margin-bottom: var(--space-6)">
+        <div class="form-grid">
+          <div class="field field--full">
+            <label class="field__label" for="search-query">What service do you need?</label>
+            <div class="control-group">
+              <span class="control-group__icon" data-search-icon aria-hidden="true"></span>
+              <input
+                class="control"
+                type="search"
+                id="search-query"
+                name="q"
+                placeholder="Plumber, electrician, tutor…"
+                autocomplete="off"
+                data-search-input>
+            </div>
+            <span class="field__hint" data-recent-hint hidden></span>
+          </div>
+        </div>
+      </form>
+
+      <div class="split split--sidebar">
+
+        <!-- ========================================================
+             Filter rail
+             ======================================================== -->
+        <aside class="filter-rail" aria-labelledby="filters-heading">
+          <div class="filter-group">
+            <h2 class="filter-group__title" id="filters-heading">Filters</h2>
+            <button class="btn btn--ghost btn--sm" type="button" data-clear-filters>Clear all</button>
+          </div>
+
+          <div class="filter-group">
+            <p class="filter-group__title" id="category-filter-title">Category</p>
+            <div data-category-filter role="group" aria-labelledby="category-filter-title"></div>
+          </div>
+
+          <div class="filter-group">
+            <label class="filter-group__title" for="filter-state">Location</label>
+            <select class="control" id="filter-state" data-filter="state">
+              <option value="">All states</option>
+            </select>
+            <select class="control" id="filter-city" data-filter="city" disabled>
+              <option value="">All cities</option>
+            </select>
+            <input class="control" type="text" id="filter-area" data-filter="area" placeholder="Area or neighbourhood" aria-label="Area or neighbourhood">
+          </div>
+
+          <div class="filter-group">
+            <p class="filter-group__title" id="rating-filter-title">Minimum rating</p>
+            <div class="filter-list" role="group" aria-labelledby="rating-filter-title">
+              <label class="filter-option">
+                <input type="radio" name="minRating" value="" data-filter="minRating" checked>
+                <span>Any rating</span>
+              </label>
+              <label class="filter-option">
+                <input type="radio" name="minRating" value="4" data-filter="minRating">
+                <span>4 stars &amp; up</span>
+              </label>
+              <label class="filter-option">
+                <input type="radio" name="minRating" value="4.5" data-filter="minRating">
+                <span>4.5 stars &amp; up</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="filter-group">
+            <label class="check" for="filter-available">
+              <input type="checkbox" id="filter-available" data-filter="available">
+              <span>Available now</span>
+            </label>
+          </div>
+        </aside>
+
+        <!-- ========================================================
+             Results
+             ======================================================== -->
+        <section aria-labelledby="results-heading">
+          <div class="results-header">
+            <h2 class="h3" id="results-heading">Providers found</h2>
+            <label class="sr-only" for="sort">Sort results</label>
+            <select class="control sort-select" id="sort" data-sort>
+              <option value="rating">Highest rated</option>
+              <option value="reviews">Most reviewed</option>
+              <option value="experience">Most experienced</option>
+            </select>
+          </div>
+
+          <p class="text-small text-muted" data-results-meta aria-live="polite"></p>
+
+          <div class="active-filters" data-active-filters></div>
+          <div data-empty-slot></div>
+          <div data-provider-results aria-busy="true"></div>
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+  <div data-site-footer></div>
+
+  <script src="js/boot-guard.js"></script>
+
+  <script type="module" src="js/pages/services.js"></script>
+</body>
+</html>

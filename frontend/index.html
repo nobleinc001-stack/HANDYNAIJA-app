@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en" data-api-mock="true">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HandyNaija — Find a trusted local professional</title>
+  <meta name="description" content="Find and hire trusted local professionals — electricians, plumbers, mechanics, tutors and more — near you.">
+  <meta name="theme-color" content="#0b6e4f">
+  <link rel="icon" href="images/05f105414-1.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body data-page="landing" data-header="public">
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <div data-site-header></div>
+
+  <main id="main" class="page-main page-main--landing">
+    <section class="landing-hero" aria-labelledby="hero-heading">
+      <div class="container landing-hero__wrap">
+        <div class="landing-hero__copy">
+          <h1 id="hero-heading">Find Trusted Local Service Providers</h1>
+          <p>From electricians to cleaners, we connect you with skilled professionals in your area.</p>
+
+          <form class="landing-search" action="services.html" method="get" aria-label="Search for a service">
+            <label class="landing-search__field">
+              <span class="landing-search__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10.5 18a7.5 7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15Zm0-2.5a5 5 0 1 0 0-10 5 5 0 0 0 0 10Zm7.3 5.5-4.85-4.85 1.4-1.4 4.85 4.85-1.4 1.4Z" fill="currentColor"/></svg>
+              </span>
+              <input type="text" name="q" value="" placeholder="What service do you need?" aria-label="What service do you need?" />
+            </label>
+
+            <label class="landing-search__field">
+              <span class="landing-search__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 21s6-4.35 6-10a6 6 0 1 0-12 0c0 5.65 6 10 6 10Zm0-8.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5Z" fill="currentColor"/></svg>
+              </span>
+              <select name="state" aria-label="State">
+                <option value="">Your location</option>
+                <option>Lagos</option>
+                <option>Abuja</option>
+                <option>Port Harcourt</option>
+              </select>
+            </label>
+
+            <label class="landing-search__field">
+              <span class="landing-search__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.5a9.5 9.5 0 0 1 9.5 9.5 9.5 9.5 0 0 1-9.5 9.5A9.5 9.5 0 0 1 2.5 12 9.5 9.5 0 0 1 12 2.5Zm0 2a7.5 7.5 0 0 0-7.5 7.5c0 4.14 3.36 7.5 7.5 7.5s7.5-3.36 7.5-7.5A7.5 7.5 0 0 0 12 4.5Zm.75 1.75v5.44l4.15 2.45-1.05 1.8-5.1-3.02V6.25h2Z" fill="currentColor"/></svg>
+              </span>
+              <select name="when" aria-label="Availability">
+                <option value="">Anytime</option>
+                <option>Today</option>
+                <option>This week</option>
+                <option>Weekend</option>
+              </select>
+            </label>
+
+            <button type="submit">Search</button>
+          </form>
+
+          <ul class="landing-trust" aria-label="Key trust points">
+            <li><span class="landing-trust__check">✓</span>Verified Professionals</li>
+            <li><span class="landing-trust__check">✓</span>Local &amp; Reliable</li>
+            <li><span class="landing-trust__check">✓</span>Safe &amp; Secure</li>
+          </ul>
+        </div>
+
+        <div class="landing-hero__visual" aria-label="Worker portrait illustration">
+          <img src="https://i.ibb.co/RpvTPcWd/Copilot-20261007-030054.png" alt="Service professional smiling" />
+        </div>
+      </div>
+    </section>
+
+    <section class="landing-section" aria-labelledby="categories-title">
+      <div class="container">
+        <div class="landing-section__header">
+          <h2 id="categories-title">Popular Service Categories</h2>
+          <a href="services.html">View All Services</a>
+        </div>
+
+        <div class="landing-categories">
+          <article class="landing-category">
+            <div class="landing-category__icon icon--gold">⚡</div>
+            <h3>Electrical</h3>
+            <p>Wiring, installation<br>and repairs</p>
+            <span>12+ providers</span>
+          </article>
+
+          <article class="landing-category">
+            <div class="landing-category__icon icon--blue">🔧</div>
+            <h3>Plumbing</h3>
+            <p>Pipe fixes and<br>water system help</p>
+            <span>18+ providers</span>
+          </article>
+
+          <article class="landing-category">
+            <div class="landing-category__icon icon--red">🚗</div>
+            <h3>Mechanic</h3>
+            <p>Diagnostics and<br>maintenance</p>
+            <span>11+ providers</span>
+          </article>
+
+          <article class="landing-category">
+            <div class="landing-category__icon icon--green">🧼</div>
+            <h3>Cleaning</h3>
+            <p>Home and office<br>deep cleaning</p>
+            <span>15+ providers</span>
+          </article>
+
+          <article class="landing-category">
+            <div class="landing-category__icon icon--purple">📚</div>
+            <h3>Tutoring</h3>
+            <p>Academic support<br>and coaching</p>
+            <span>9+ providers</span>
+          </article>
+
+          <article class="landing-category">
+            <div class="landing-category__icon icon--cyan">🛠️</div>
+            <h3>Technician</h3>
+            <p>General repairs<br>and maintenance</p>
+            <span>14+ providers</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="landing-section landing-section--surface" aria-labelledby="providers-title">
+      <div class="container">
+        <div class="landing-section__header">
+          <h2 id="providers-title">Featured Service Providers</h2>
+          <a href="services.html">View All Providers</a>
+        </div>
+
+        <div class="landing-providers">
+          <article class="landing-provider-card">
+            <img src="https://i.ibb.co/63mxLDB/Electri444.jpg" alt="Bright Spark Electrician" />
+            <div class="landing-provider-card__body">
+              <h3>Bright Spark Electrician</h3>
+              <div class="landing-provider-card__meta">
+                <span class="rating">★ 4.8</span>
+                <span class="verified">Verified</span>
+              </div>
+              <ul>
+                <li>Electrical wiring</li>
+                <li>Lighting install</li>
+                <li>Repair and maintenance</li>
+              </ul>
+              <a href="provider-public.html" class="landing-provider-card__button">View Profile</a>
+            </div>
+          </article>
+
+          <article class="landing-provider-card">
+            <img src="https://i.ibb.co/x8qCc75W/Plum444.jpg" alt="Onitsha Plumbing Services" />
+            <div class="landing-provider-card__body">
+              <h3>Onitsha Plumbing Services</h3>
+              <div class="landing-provider-card__meta">
+                <span class="rating">★ 4.9</span>
+                <span class="verified">Verified</span>
+              </div>
+              <ul>
+                <li>Pipe fitting</li>
+                <li>Drain cleaning</li>
+                <li>Emergency fixes</li>
+              </ul>
+              <a href="provider-public.html" class="landing-provider-card__button">View Profile</a>
+            </div>
+          </article>
+
+          <article class="landing-provider-card">
+            <img src="https://i.ibb.co/nNLj3KrY/mechan444.jpg" alt="Automobile Mechanics" />
+            <div class="landing-provider-card__body">
+              <h3>Automobile Mechanics</h3>
+              <div class="landing-provider-card__meta">
+                <span class="rating">★ 4.7</span>
+                <span class="verified">Verified</span>
+              </div>
+              <ul>
+                <li>Engine tuning</li>
+                <li>Brake service</li>
+                <li>Vehicle checks</li>
+              </ul>
+              <a href="provider-public.html" class="landing-provider-card__button">View Profile</a>
+            </div>
+          </article>
+
+          <article class="landing-provider-card">
+            <img src="https://i.ibb.co/Q38C70PG/Cleaner3000.jpg" alt="CleanPro Services" />
+            <div class="landing-provider-card__body">
+              <h3>CleanPro Services</h3>
+              <div class="landing-provider-card__meta">
+                <span class="rating">★ 4.9</span>
+                <span class="verified">Verified</span>
+              </div>
+              <ul>
+                <li>Deep cleaning</li>
+                <li>Office care</li>
+                <li>Home refresh</li>
+              </ul>
+              <a href="provider-public.html" class="landing-provider-card__button">View Profile</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="landing-benefits" aria-label="Why choose HandyNaija">
+      <div class="container landing-benefits__grid">
+        <article class="landing-benefit">
+          <div class="landing-benefit__icon">✓</div>
+          <h3>Trusted Professionals</h3>
+          <p>Background-checked experts with verified work history.</p>
+        </article>
+
+        <article class="landing-benefit">
+          <div class="landing-benefit__icon">●</div>
+          <h3>Secure Payments</h3>
+          <p>Safe transaction flows and clear service agreements.</p>
+        </article>
+
+        <article class="landing-benefit">
+          <div class="landing-benefit__icon">◍</div>
+          <h3>Local Support</h3>
+          <p>Quick, nearby matches for urgent and routine service needs.</p>
+        </article>
+
+        <article class="landing-benefit">
+          <div class="landing-benefit__icon">☎</div>
+          <h3>24/7 Assistance</h3>
+          <p>Friendly help any time you need updates or support.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <div data-site-footer></div>
+
+  <script src="js/boot-guard.js"></script>
+
+  <script type="module" src="js/pages/landing.js"></script>
+</body>
+</html>

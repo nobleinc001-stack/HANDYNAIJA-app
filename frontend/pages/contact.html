@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" data-api-mock="true">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact us — HandyNaija</title>
+  <meta name="description" content="Contact the HandyNaija support team about a request, a provider, or an account.">
+  <meta name="theme-color" content="#0b6e4f">
+  <link rel="icon" href="../images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body data-page="contact" data-header="public" data-depth="nested">
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <div data-site-header></div>
+
+  <main id="main" class="page-main">
+    <div class="container">
+
+      <section class="section" aria-labelledby="contact-heading">
+        <p class="eyebrow">Support</p>
+        <h1 class="h1" id="contact-heading">Contact us</h1>
+        <p class="text-lead">
+          Tell us what happened and we will look into it. Include a request reference if you
+          have one — it lets us find the job immediately.
+        </p>
+      </section>
+
+      <div class="section section--surface">
+        <div class="dashboard-grid">
+          <!-- ==========================================================
+               Form
+               ========================================================== -->
+          <section class="card card--padded card--full" aria-labelledby="contact-form-heading">
+            <h2 class="h4" id="contact-form-heading">Send a message</h2>
+
+            <div class="alert alert--danger hidden" data-error-summary-host role="alert">
+              <span class="sr-only">Errors</span>
+            </div>
+            <p class="field__error-text" data-error-summary role="alert"></p>
+
+            <div data-contact-root>
+              <p class="text-small text-muted">Loading the form…</p>
+            </div>
+          </section>
+
+          <!-- ==========================================================
+               Other routes
+               ========================================================== -->
+          <section class="card card--padded" aria-labelledby="contact-other-heading">
+            <h2 class="h4" id="contact-other-heading">Other ways to reach us</h2>
+
+            <div class="detail-list">
+              <div class="detail-row">
+                <span class="detail-row__label">Email</span>
+                <span class="detail-row__value">support@handynaija.ng</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-row__label">Phone</span>
+                <span class="detail-row__value">+234 8128232562</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-row__label">Hours</span>
+                <span class="detail-row__value">Monday to Saturday, 8am – 6pm (WAT)</span>
+              </div>
+            </div>
+
+            <p class="text-small text-muted">
+              Already have a request? The fastest route is in-app messaging — it keeps the
+              conversation attached to the job.
+            </p>
+            <div class="btn-group">
+              <a class="btn btn--secondary" href="../messages.html">Open messages</a>
+            </div>
+          </section>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <div data-site-footer></div>
+
+  <script src="../js/boot-guard.js"></script>
+
+  <script type="module" src="../js/pages/contact.js"></script>
+</body>
+</html>
