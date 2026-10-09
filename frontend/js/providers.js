@@ -9,7 +9,7 @@ import { el, $, mount, initials } from './lib/dom.js';
 import { icon } from './lib/icons.js';
 import { call } from './lib/api.js';
 import * as store from './lib/store.js';
-import { DAYS_OF_WEEK, SERVICE_NAMES, VERIFICATION_STATUS } from '../../shared/constants.js';
+import { DAYS_OF_WEEK, SERVICE_NAMES, VERIFICATION_STATUS } from '../shared/constants.js';
 import {
   spinner,
   errorState,

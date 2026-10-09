@@ -8,7 +8,7 @@
 
 import { el, $, mount } from '../lib/dom.js';
 import { icon } from '../lib/icons.js';
-import { ROLES } from '../../../shared/constants.js';
+import { ROLES } from '../../shared/constants.js';
 import { relativeHref } from './navbar.js';
 import { avatar } from './ui.js';
 import * as store from '../lib/store.js';

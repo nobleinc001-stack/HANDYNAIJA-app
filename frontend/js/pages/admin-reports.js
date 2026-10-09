@@ -8,7 +8,7 @@
 import { registerPage, boot } from '../main.js';
 import { el, mount, formatRelative } from '../lib/dom.js';
 import { call } from '../lib/api.js';
-import { ROLES, REPORT_REASON_LABELS } from '../../../shared/constants.js';
+import { ROLES, REPORT_REASON_LABELS } from '../../shared/constants.js';
 import { renderShell, appendUserChip, pageHead } from '../components/shell.js';
 import {
   badge,

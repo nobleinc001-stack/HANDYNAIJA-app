@@ -11,7 +11,7 @@
  * else served from the same origin.
  */
 
-import { ROLES } from '../../../shared/constants.js';
+import { ROLES } from '../../shared/constants.js';
 
 const PREFIX = 'hn:';
 

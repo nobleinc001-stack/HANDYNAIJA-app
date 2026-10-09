@@ -7,7 +7,7 @@
 
 import { registerPage, boot } from '../main.js';
 import { $ } from '../lib/dom.js';
-import { ROLES } from '../../../shared/constants.js';
+import { ROLES } from '../../shared/constants.js';
 import { renderShell, appendUserChip } from '../components/shell.js';
 import { renderRequestDetails } from '../requests.js';
 import * as store from '../lib/store.js';

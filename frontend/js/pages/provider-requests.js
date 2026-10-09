@@ -5,7 +5,7 @@
 
 import { registerPage, boot } from '../main.js';
 import { el } from '../lib/dom.js';
-import { ROLES } from '../../../shared/constants.js';
+import { ROLES } from '../../shared/constants.js';
 import { renderShell, appendUserChip, pageHead } from '../components/shell.js';
 import { renderProviderRequestQueue } from '../requests.js';
 

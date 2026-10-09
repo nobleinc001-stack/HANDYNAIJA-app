@@ -10,7 +10,7 @@ import { registerPage, boot, markLoaded } from '../main.js';
 import { $, el, mount, debounce } from '../lib/dom.js';
 import { icon, iconNode } from '../lib/icons.js';
 import { call } from '../lib/api.js';
-import { STATES, LOCATIONS, POPULAR_SERVICES, SERVICE_NAMES } from '../../../shared/constants.js';
+import { STATES, LOCATIONS, POPULAR_SERVICES, SERVICE_NAMES } from '../../shared/constants.js';
 import {
   skeletonCard,
   emptyState,

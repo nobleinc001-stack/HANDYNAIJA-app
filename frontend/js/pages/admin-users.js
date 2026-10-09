@@ -6,7 +6,7 @@
 import { registerPage, boot } from '../main.js';
 import { el, mount, debounce, formatRelative } from '../lib/dom.js';
 import { call } from '../lib/api.js';
-import { ROLES, ACCOUNT_STATUS } from '../../../shared/constants.js';
+import { ROLES, ACCOUNT_STATUS } from '../../shared/constants.js';
 import { renderShell, appendUserChip, pageHead } from '../components/shell.js';
 import {
   avatar,

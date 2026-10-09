@@ -54,7 +54,7 @@ available for prototype screens whose API endpoints have not been implemented.
 - `tests/` — automated API tests
 - `uploads/` — local development upload storage (ignored by Git)
 - `deployment/` — environment and release guidance
-- `shared/` — constants and validation shared by frontend modules
+- `frontend/shared/` — browser-safe constants and validation used by frontend modules
 
 Product scope, technical contracts, and team workflow are documented in
 [`docs/README.md`](docs/README.md).

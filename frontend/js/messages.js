@@ -10,7 +10,7 @@ import { el, $, $$, mount, formatRelative, formatTime } from './lib/dom.js';
 import { icon } from './lib/icons.js';
 import { call } from './lib/api.js';
 import * as store from './lib/store.js';
-import { ROLES } from '../../shared/constants.js';
+import { ROLES } from '../shared/constants.js';
 import { spinner, errorState, emptyState, avatar, toastError } from './components/ui.js';
 import { relativeHref } from './components/navbar.js';
 

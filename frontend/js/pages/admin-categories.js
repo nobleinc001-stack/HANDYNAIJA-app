@@ -10,7 +10,7 @@ import { registerPage, boot } from '../main.js';
 import { el, mount, slugify } from '../lib/dom.js';
 import { icon } from '../lib/icons.js';
 import { call } from '../lib/api.js';
-import { ROLES, CATEGORY_GROUPS } from '../../../shared/constants.js';
+import { ROLES, CATEGORY_GROUPS } from '../../shared/constants.js';
 import { renderShell, appendUserChip, pageHead } from '../components/shell.js';
 import {
   badge,

@@ -6,7 +6,7 @@
 import { registerPage, boot } from '../main.js';
 import { el, mount, debounce, formatDateTime } from '../lib/dom.js';
 import { call } from '../lib/api.js';
-import { ROLES, REQUEST_STATUS, REQUEST_STATUS_ORDER, REQUEST_STATUS_LABELS } from '../../../shared/constants.js';
+import { ROLES, REQUEST_STATUS, REQUEST_STATUS_ORDER, REQUEST_STATUS_LABELS } from '../../shared/constants.js';
 import { renderShell, appendUserChip, pageHead } from '../components/shell.js';
 import { statusBadge, emptyState, errorState } from '../components/ui.js';
 import { relativeHref } from '../components/navbar.js';

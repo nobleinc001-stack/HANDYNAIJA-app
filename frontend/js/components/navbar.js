@@ -8,7 +8,7 @@
 
 import { el, $, on, mount, delegate } from '../lib/dom.js';
 import { icon } from '../lib/icons.js';
-import { API_BASE, ROLES } from '../../../shared/constants.js';
+import { API_BASE, ROLES } from '../../shared/constants.js';
 import * as store from '../lib/store.js';
 
 /** Where each role lands after signing in. */

@@ -9,9 +9,9 @@
  *     page by double-clicking it gives a blank white page.
  *
  *  2. The server MUST be rooted at the project root, not at `frontend/`.
- *     Modules under `frontend/js/` import `../../shared/constants.js`, which
- *     resolves *outside* `frontend/`. Rooting the server at `frontend/` makes
- *     every page fail to load its constants and renders nothing.
+ *     Frontend modules import shared files from `frontend/shared/`. Serve the
+ *     repository root for local development so the same paths work as in the
+ *     frontend-root production deployment.
  *
  * Usage:
  *   node serve.mjs                 # serves the project root on :4173

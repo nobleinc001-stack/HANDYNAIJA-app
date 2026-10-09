@@ -18,7 +18,7 @@
  *     this off and talk to a real API only.
  */
 
-import { API_BASE, ACCOUNT_STATUS, ALLOWED_TRANSITIONS, REQUEST_STATUS_LABELS } from '../../../shared/constants.js';
+import { API_BASE, ACCOUNT_STATUS, ALLOWED_TRANSITIONS, REQUEST_STATUS_LABELS } from '../../shared/constants.js';
 import * as mock from './mock-data.js';
 import * as store from './store.js';
 
@@ -599,8 +599,12 @@ export async function call(method, path, options = {}) {
       apiError.status === 404 ||
       apiError.status === 405 ||
       apiError.status === 501;
+    const publicRouteRequiresAuthentication =
+      method === 'GET' &&
+      options.auth === false &&
+      apiError.status === 401;
 
-    const canFallback = config.mockEnabled && backendMissing;
+    const canFallback = config.mockEnabled && (backendMissing || publicRouteRequiresAuthentication);
 
     if (!canFallback) {
       if (apiError.isAuthError && apiError.status === 401 && !options.skipAuthRedirect) {

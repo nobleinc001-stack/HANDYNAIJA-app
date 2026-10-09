@@ -23,7 +23,7 @@ import {
   REQUEST_STATUS_ORDER,
   STATUS_VARIANT,
   VERIFICATION_STATUS,
-} from '../../../shared/constants.js';
+} from '../../shared/constants.js';
 
 /* ================================================================== */
 /* Feedback: skeleton, empty state, spinner                            */

@@ -22,7 +22,7 @@ import {
   LOCATIONS,
   STATES,
   ROLES,
-} from '../../shared/constants.js';
+} from '../shared/constants.js';
 import {
   validateDate,
   validateTime,
@@ -33,7 +33,7 @@ import {
   validateRequired,
   validateText,
   validateImageFile,
-} from '../../shared/validation.js';
+} from '../shared/validation.js';
 import {
   statusBadge,
   progressTimeline,

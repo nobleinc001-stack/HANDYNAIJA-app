@@ -8,7 +8,7 @@
 import { registerPage, boot } from '../main.js';
 import { $, el, mount } from '../lib/dom.js';
 import { icon, iconNode } from '../lib/icons.js';
-import { LOCATIONS, SERVICE_NAMES } from '../../../shared/constants.js';
+import { LOCATIONS, SERVICE_NAMES } from '../../shared/constants.js';
 import { initProviderSearch, buildCategoryFilter, fillStateSelect, readQueryState } from '../services.js';
 import * as store from '../lib/store.js';
 

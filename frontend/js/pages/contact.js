@@ -17,7 +17,7 @@ import {
   radioGroup,
   toastSuccess,
 } from '../components/ui.js';
-import { validateEmail, validateRequired, validateText } from '../../../shared/validation.js';
+import { validateEmail, validateRequired, validateText } from '../../shared/validation.js';
 import { relativeHref } from '../components/navbar.js';
 import * as store from '../lib/store.js';
 

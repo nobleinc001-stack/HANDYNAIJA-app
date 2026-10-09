@@ -4,7 +4,7 @@
  */
 
 import { registerPage, boot } from '../main.js';
-import { ROLES } from '../../../shared/constants.js';
+import { ROLES } from '../../shared/constants.js';
 import { renderShell } from '../components/shell.js';
 import { initMessaging } from '../messages.js';
 import * as store from '../lib/store.js';

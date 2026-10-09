@@ -10,7 +10,7 @@ import { el, $, $$, mount, debounce, initials } from './lib/dom.js';
 import { icon } from './lib/icons.js';
 import { call } from './lib/api.js';
 import * as store from './lib/store.js';
-import { CATEGORY_GROUPS, SERVICE_NAMES, POPULAR_SERVICES, LOCATIONS, STATES } from '../../shared/constants.js';
+import { CATEGORY_GROUPS, SERVICE_NAMES, POPULAR_SERVICES, LOCATIONS, STATES } from '../shared/constants.js';
 import {
   skeletonGrid,
   emptyState,
@@ -248,6 +248,7 @@ export function initProviderSearch(container, { categories = null, compact = fal
     $$('[data-filter]').forEach((input) => {
       const key = input.dataset.filter;
       if (input.type === 'checkbox') input.checked = Boolean(state[key]);
+      else if (input.type === 'radio') input.checked = input.value === (state[key] ?? '');
       else input.value = state[key] ?? '';
     });
     $$('[data-sort]').forEach((select) => {
@@ -264,6 +265,7 @@ export function initProviderSearch(container, { categories = null, compact = fal
 
     $$('[data-filter]').forEach((input) => {
       const key = input.dataset.filter;
+      if (input.type === 'radio' && !input.checked) return;
       next[key] = input.type === 'checkbox' ? input.checked : input.value;
     });
 

@@ -13,7 +13,7 @@ import {
   ACCOUNT_STATUS,
   NOTIFICATION_TYPE,
   REPORT_REASON,
-} from '../../../shared/constants.js';
+} from '../../shared/constants.js';
 
 /** Fixed clock so relative timestamps stay sensible regardless of build date. */
 const NOW = new Date();

@@ -64,7 +64,9 @@ variables (hosted environments). Important variables:
 
 Never commit real secrets. The frontend's API origin is configurable with the
 HTML `data-api-base` attribute; it must point at the deployed API outside local
-development. Disable mock mode in production.
+development. Keep mock fallback enabled until every frontend feature has a
+backend route; requests use the backend when available and fall back to demo
+data only when an endpoint is missing or unreachable.
 
 ## Security boundaries
 
@@ -73,7 +75,9 @@ development. Disable mock mode in production.
 - The database is reachable by the backend only and is configured through a
   secret connection string.
 - Production deployment must use HTTPS, restrict CORS to the frontend origin,
-  rotate strong secrets, and avoid logging credentials or tokens.
+  rotate strong secrets, and avoid logging credentials or tokens. Keep frontend
+  mock fallback enabled until the backend supports every feature; implemented
+  API routes will use the backend, while unsupported routes can use demo data.
 - Public administrator enrollment is not acceptable; provision admin accounts
   via a controlled operation.
 

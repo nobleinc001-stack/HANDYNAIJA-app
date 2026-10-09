@@ -5,7 +5,7 @@
  * route guards every authenticated page calls on boot.
  */
 
-import { API_BASE, ROLES, ROLE_LABELS } from '../../shared/constants.js';
+import { API_BASE, ROLES, ROLE_LABELS } from '../shared/constants.js';
 import { ApiError, call } from './lib/api.js';
 import * as store from './lib/store.js';
 import { el, $, mount } from './lib/dom.js';
@@ -19,7 +19,7 @@ import {
   validatePassword,
   validatePasswordConfirmation,
   validateRequired,
-} from '../../shared/validation.js';
+} from '../shared/validation.js';
 import {
   alertBanner,
   checkboxField,

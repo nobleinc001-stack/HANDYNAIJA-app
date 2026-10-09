@@ -29,9 +29,10 @@ HANDYNAIJA/
 │   │   ├── components/
 │   │   ├── lib/             # API client, state, utilities, mock adapter
 │   │   └── pages/
+│   ├── shared/              # Browser-safe constants and validation
 │   ├── pages/               # Nested informational pages
 │   └── *.html               # Main app screens
-├── shared/                  # Frontend constants and validation
+├── shared/                  # Re-exports for existing project-root imports
 ├── tests/
 │   └── backend/             # Node test-runner API tests
 ├── uploads/                 # Local-only placeholder; ignored by Git
@@ -50,8 +51,8 @@ HANDYNAIJA/
 - Keep page-specific frontend behavior in `frontend/js/pages/`, reusable
   components in `frontend/js/components/`, and shared browser utilities in
   `frontend/js/lib/`.
-- Keep frontend/backend shared constants or validation in `shared/` only when
-  they are genuinely browser-safe and server-safe.
+- Keep browser-safe constants and validation in `frontend/shared/` so they
+  are included when the frontend is deployed as a standalone static site.
 - Add project references to `docs/`; keep operational database notes in
   `database/` and hosting notes in `deployment/`.
 - Do not store production uploads on the API server's local disk; use durable

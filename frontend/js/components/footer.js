@@ -5,7 +5,7 @@
 
 import { el, $ } from '../lib/dom.js';
 import { icon } from '../lib/icons.js';
-import { CATEGORY_GROUPS } from '../../../shared/constants.js';
+import { CATEGORY_GROUPS } from '../../shared/constants.js';
 import { brand, relativeHref } from './navbar.js';
 
 const RESOURCE_LINKS = [

@@ -6,15 +6,14 @@
  * silently. A classic script always runs, so it is the only thing that can
  * tell the user *why* nothing appeared.
  *
- * Two ways this app legitimately ends up blank:
+ * Two common ways this app can end up blank:
  *
  *   1. Opened as a file (`file://...`). Browsers block `<script type="module">`
  *      over file:// because module fetches are CORS-checked and file:// has no
  *      origin. The app must be served over HTTP.
  *
- *   2. Served with `frontend/` as the web root. Modules under `frontend/js/`
- *      import `../../shared/constants.js`, which lives *outside* `frontend/`,
- *      so every page fails to resolve its constants.
+ *   2. A deployed frontend is missing its `shared/` modules, so the browser
+ *      cannot load the page's ES module dependency graph.
  *
  * In both cases the module never runs, so this replaces the empty page with
  * the actual fix. It styles itself inline and stays out of the way entirely
@@ -140,14 +139,12 @@
 
     if (missing) {
       bail(
-        'Shared files could not be loaded',
-        'The pages import constants and validators from the shared/ folder, which sits beside frontend/ rather than inside it. The server is almost certainly using frontend/ as its web root, so those imports resolve to a 404 and no page can start.',
+        'Frontend shared files could not be loaded',
+        'The page imports constants or validators from the shared/ folder, but the deployed site returned an error for one of those files. Make sure the shared/ folder is included alongside js/ in the frontend deployment.',
         [
-          'Serve the PROJECT ROOT, not the frontend folder:',
-          '  node serve.mjs',
-          '',
-          'Then open:',
-          '  http://localhost:4173/   (redirects to /frontend/)'
+          'Deploy the complete frontend/ folder, including:',
+          '  shared/constants.js',
+          '  shared/validation.js'
         ]
       );
       return;

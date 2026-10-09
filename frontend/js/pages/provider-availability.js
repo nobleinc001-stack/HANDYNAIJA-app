@@ -8,7 +8,7 @@
 import { registerPage, boot } from '../main.js';
 import { $, el, mount } from '../lib/dom.js';
 import { call } from '../lib/api.js';
-import { ROLES, DAYS_OF_WEEK } from '../../../shared/constants.js';
+import { ROLES, DAYS_OF_WEEK } from '../../shared/constants.js';
 import { renderShell, appendUserChip, pageHead } from '../components/shell.js';
 import { alertBanner, spinner, toastSuccess, toastError } from '../components/ui.js';
 import { resolveMyProviderId, summariseAvailability } from '../providers.js';

@@ -7,7 +7,7 @@
  */
 
 import { $, $$, el } from './lib/dom.js';
-import { validatePayload, validateRequired } from '../../shared/validation.js';
+import { validatePayload, validateRequired } from '../shared/validation.js';
 import { toastError } from './components/ui.js';
 
 /**

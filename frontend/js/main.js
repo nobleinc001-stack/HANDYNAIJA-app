@@ -21,7 +21,7 @@
  */
 
 import { $ } from './lib/dom.js';
-import { ROLES } from '../../shared/constants.js';
+import { ROLES } from '../shared/constants.js';
 import * as auth from './auth.js';
 import { renderHeader } from './components/navbar.js';
 import { renderFooter } from './components/footer.js';

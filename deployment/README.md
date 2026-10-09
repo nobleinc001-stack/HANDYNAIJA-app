@@ -5,6 +5,9 @@ variables, not in committed files. Set `DATABASE_URL`, `JWT_SECRET`, and
 `NODE_ENV=production` for the backend. Render provides `PORT`; the backend
 listens on that port on `0.0.0.0`.
 
+Deploy the `frontend/` directory as the Vercel project root. It contains the
+browser modules and their `shared/` dependencies.
+
 The API accepts HTTPS origins on `*.vercel.app` for Vercel production and
 preview deployments. Set `CORS_ORIGINS` to a comma-separated list of exact
 origins to allow a custom frontend domain, for example
