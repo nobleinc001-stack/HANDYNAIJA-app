@@ -85,7 +85,8 @@ export function isAuthenticated() {
 }
 
 export function getRole() {
-  return getSession()?.user?.role ?? null;
+  const role = getSession()?.user?.role;
+  return typeof role === 'string' ? role.toLowerCase() : null;
 }
 
 export function isRole(...roles) {

@@ -75,6 +75,10 @@
     margin-inline-start: auto;
   }
 
+  .nav-toggle {
+    margin-inline-start: auto;
+  }
+
   /* Sidebar shell becomes a top-of-page scrollable nav */
   .app-shell {
     grid-template-columns: minmax(0, 1fr);

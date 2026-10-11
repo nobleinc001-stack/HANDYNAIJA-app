@@ -14,6 +14,16 @@ export const createProviderProfileSchema = z.object({
   available: z.boolean().default(true),
 });
 
+export const updateProviderProfileSchema = z.object({
+  businessName: z.string().trim().min(2).optional(),
+  bio: z.string().trim().max(600).optional(),
+  yearsExperience: z.number().int().min(0).optional(),
+  state: z.string().trim().optional(),
+  city: z.string().trim().optional(),
+  areasServed: z.array(z.string().trim()).optional(),
+  avatarUrl: z.string().max(3_000_000).optional(),
+});
+
 export const updateProviderServicesSchema = z.object({
   services: z.array(z.object({
     name: z.string().trim().min(2),

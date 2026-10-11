@@ -70,7 +70,7 @@ function render(slot, provider, providerId) {
   const form = el('form', { class: 'form', novalidate: true },
     el('div', { class: 'form-grid' },
       textField('businessName', 'Business name', provider.businessName ?? provider.fullName, true),
-      textField('yearsExperience', 'Years of experience', provider.yearsExperience ?? '', false, 'number')
+      textField('yearsExperience', 'Years of experience', provider.yearsExperience ?? provider.experienceYears ?? '', false, 'number')
     ),
     picture.node,
     el('div', { class: 'field' },
@@ -94,7 +94,7 @@ function render(slot, provider, providerId) {
     ),
     el('div', { class: 'field' },
       el('label', { class: 'field__label', for: 'business-area' }, 'Areas you cover'),
-      el('input', { class: 'control', type: 'text', id: 'business-area', name: 'areasServed', value: (provider.areasServed ?? []).join(', ') }),
+      el('input', { class: 'control', type: 'text', id: 'business-area', name: 'areasServed', value: (provider.areasServed ?? provider.areas ?? []).join(', ') }),
       el('span', { class: 'field__hint' }, 'Comma separated, for example: Lekki, Ikoyi, Victoria Island')
     ),
     el('div', { class: 'btn-group', style: { 'margin-top': 'var(--space-5)' } },

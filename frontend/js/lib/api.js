@@ -291,7 +291,7 @@ const mockRoutes = [
       // experience instead of always in the customer one.
       const wantsProvider = body?.role === 'provider';
       const user = wantsProvider
-        ? { ...mock.demoProviderUser, fullName: body?.fullName ?? mock.demoProviderUser.fullName, email: body?.email ?? mock.demoProviderUser.email, phone: body?.phone ?? mock.demoProviderUser.phone }
+        ? { ...mock.demoProviderUser, id: `USR-REG-${Date.now()}`, fullName: body?.fullName ?? mock.demoProviderUser.fullName, email: body?.email ?? mock.demoProviderUser.email, phone: body?.phone ?? mock.demoProviderUser.phone, businessName: body?.businessName }
         : { ...mock.demoUser, fullName: body?.fullName ?? mock.demoUser.fullName, email: body?.email ?? mock.demoUser.email, phone: body?.phone ?? mock.demoUser.phone };
 
       return { user, token: wantsProvider ? 'mock-token-provider' : 'mock-token-customer' };
@@ -438,6 +438,10 @@ const mockRoutes = [
     // then silently reverted everywhere else.
     const provider = currentProvider();
     Object.assign(provider, body ?? {});
+    if (body?.yearsExperience !== undefined) provider.experienceYears = body.yearsExperience;
+    if (body?.areasServed !== undefined) provider.areas = body.areasServed;
+    const user = store.getUser();
+    if (user) store.setUser({ ...user, providerProfile: provider });
     return { provider };
   }],
   ['POST', /^\/provider\/services$/, (_params, _query, body) => ({ service: { id: `SVC-${Date.now().toString().slice(-4)}`, ...body } })],
@@ -480,8 +484,30 @@ const mockRoutes = [
  * `PRV-*`, so provider-scoped routes have to translate between the two.
  */
 function currentProvider() {
-  const userId = store.getUser()?.id;
-  return mock.providers.find((item) => item.userId === userId) ?? mock.providers[0];
+  const user = store.getUser();
+  const userId = user?.id;
+  const existing = mock.providers.find((item) => item.userId === userId);
+  if (existing) return existing;
+  if (!userId) return mock.providers[0];
+
+  const profile = user.providerProfile ?? {
+    ...mock.providers[0],
+    id: `PRV-${userId}`,
+    userId,
+    fullName: user.fullName,
+    businessName: user.businessName ?? `${user.fullName}'s business`,
+    bio: '',
+    state: user.state ?? '',
+    city: user.city ?? '',
+    areas: [],
+    experienceYears: 0,
+    verificationStatus: 'unverified',
+    services: [],
+    availability: [],
+  };
+  const provider = { ...profile, id: profile.id ?? `PRV-${userId}`, userId };
+  mock.providers.push(provider);
+  return provider;
 }
 
 /**
