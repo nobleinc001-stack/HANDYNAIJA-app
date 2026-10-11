@@ -242,7 +242,7 @@ export async function renderDemoLoginPanel(container, onPick) {
       'div',
       { class: 'alert__body' },
       el('p', { class: 'alert__title', text: 'Demo mode' }),
-      el('p', { text: 'The API is not running, so these demo accounts use built-in sample data.' }),
+      el('p', { text: 'These demo accounts sign in with built-in sample data.' }),
       el(
         'div',
         { class: 'cluster', style: { '--cluster-gap': 'var(--space-2)', 'margin-top': 'var(--space-2)' } },

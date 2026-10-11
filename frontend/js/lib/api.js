@@ -300,7 +300,7 @@ const mockRoutes = [
   [
     'POST',
     /^\/auth\/login$/,
-    (body) => {
+    (_params, _query, body) => {
       const known = Object.values(mock.demoCredentials).some((item) => item.email === body?.email);
       if (!known) {
         throw new ApiError({
@@ -611,6 +611,11 @@ function runMock(method, path, body, query) {
  * backend is unreachable and mock mode is enabled.
  */
 export async function call(method, path, options = {}) {
+  if (isDemoLogin(method, path, options.body)) {
+    usingMock = true;
+    return runMock(method, path, options.body, options.query);
+  }
+
   try {
     const result = await request(method, path, options);
     usingMock = false;
@@ -645,6 +650,15 @@ export async function call(method, path, options = {}) {
     usingMock = true;
     return runMock(method, path, options.body, options.query);
   }
+}
+
+function isDemoLogin(method, path, body) {
+  return config.mockEnabled &&
+    method === 'POST' &&
+    path === '/auth/login' &&
+    Object.values(mock.demoCredentials).some(
+      ({ email }) => email === String(body?.email ?? '').trim().toLowerCase()
+    );
 }
 
 export const http = { get, post, patch, put, del };
